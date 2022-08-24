@@ -1,0 +1,26 @@
+<h2 style="color:crimson;">Historial</h2>
+
+<% if(DB_PRODUCTOS.length > 0){ %> 
+    <div class="table-responsive">
+        <table class="table table-dark">
+            <tr style="color: red;"> <th>Descripcion</th> <th>Precio</th> <th>Imagen</th> </tr>
+            <!-- filas -->
+            <% for (const productos of DB_PRODUCTOS) {%> 
+            <tr> 
+                <td><%=productos.descripcion %> </td>
+                <td><%=productos.precio %> </td>
+                <td><%=productos.imagen %> </td>
+                <td>
+                    <img width="30" src="<%=productos.imagen%>" alt="">
+                </td>
+            </tr>
+            <% } %> 
+            <!-- Fin filas -->
+        </table>
+    </div>
+<% } else { %> 
+    <h3 class="alert alert-danger">No se encontraron productos</h3>
+<% } %> 
+<form action="/" method="GET">
+    <button class="btn btn-success mt-3 mb-5">Carga de productos</button>
+    </form>

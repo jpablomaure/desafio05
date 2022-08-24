@@ -1,0 +1,19 @@
+div(class="jumbotron")
+    h1(style="color:blue;") Carga de producos
+    br
+    form(action="/productos" method="POST")
+        div(class="form-group")
+            label(for="descripcion")
+                b Descripcion 
+            input(id="descripcion" class="form-control" type="text" name="descripcion" required )
+        .form-group
+            label(for='precio')
+                b Precio
+            input#precio.form-control(type='number' name='precio' required)
+        .form-group
+            label(for='imagen')
+                b Imagen
+            input#imagen.form-control(type='text' name='imagen' )
+        button(class="btn btn-success mt-3 mb-5") Cargar 
+    form(action="/cargados" method="GET")
+        button(class="btn btn-success mt-3 mb-5") Ver Cargados 

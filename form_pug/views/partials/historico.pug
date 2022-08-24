@@ -1,0 +1,22 @@
+div
+    h2(style='color:green;') Productos cargados
+    br
+    if DB_PRODUCTOS.length > 0
+        div(class="table-responsive")
+            table.table.table-dark
+                tr(style='color: red;')
+                    th Descripcion 
+                    th Precio
+                    th Imagen
+                each producto in DB_PRODUCTOS        
+                    tr
+                        td=producto.descripcion
+                        td=producto.precio
+                        td=producto.imagen 
+                        td
+                            img(width="30" src=producto.imagen, alt="")
+    else 
+        h3(class="alert alert-warning")='No se encontraron productos'
+    br
+    form(action="/" method="GET")
+        button(class="btn btn-success mt-3 mb-5") Carga de productos
